@@ -7,6 +7,13 @@ type Todo {
   updatedAt: AWSDateTime!
 }
 
+type Course {
+  id: ID!
+  name: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
 input ModelStringInput {
   ne: String
   eq: String
@@ -115,6 +122,8 @@ input ModelTodoFilterInput {
 type Query {
   getTodo(id: ID!): Todo
   listTodos(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection
+  getCourse(id: ID!): Course
+  listCourses(filter: ModelCourseFilterInput, limit: Int, nextToken: String): ModelCourseConnection
 }
 
 input ModelTodoConditionInput {
@@ -145,11 +154,51 @@ type Mutation {
   createTodo(input: CreateTodoInput!, condition: ModelTodoConditionInput): Todo
   updateTodo(input: UpdateTodoInput!, condition: ModelTodoConditionInput): Todo
   deleteTodo(input: DeleteTodoInput!, condition: ModelTodoConditionInput): Todo
+  createCourse(input: CreateCourseInput!, condition: ModelCourseConditionInput): Course
+  updateCourse(input: UpdateCourseInput!, condition: ModelCourseConditionInput): Course
+  deleteCourse(input: DeleteCourseInput!, condition: ModelCourseConditionInput): Course
 }
 
 type Subscription {
   onCreateTodo: Todo @aws_subscribe(mutations: ["createTodo"])
   onUpdateTodo: Todo @aws_subscribe(mutations: ["updateTodo"])
   onDeleteTodo: Todo @aws_subscribe(mutations: ["deleteTodo"])
+  onCreateCourse: Course @aws_subscribe(mutations: ["createCourse"])
+  onUpdateCourse: Course @aws_subscribe(mutations: ["updateCourse"])
+  onDeleteCourse: Course @aws_subscribe(mutations: ["deleteCourse"])
+}
+
+type ModelCourseConnection {
+  items: [Course]!
+  nextToken: String
+}
+
+input ModelCourseFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelCourseFilterInput]
+  or: [ModelCourseFilterInput]
+  not: ModelCourseFilterInput
+}
+
+input ModelCourseConditionInput {
+  name: ModelStringInput
+  and: [ModelCourseConditionInput]
+  or: [ModelCourseConditionInput]
+  not: ModelCourseConditionInput
+}
+
+input CreateCourseInput {
+  id: ID
+  name: String!
+}
+
+input UpdateCourseInput {
+  id: ID!
+  name: String
+}
+
+input DeleteCourseInput {
+  id: ID!
 }
 

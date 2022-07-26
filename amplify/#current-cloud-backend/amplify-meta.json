@@ -31,11 +31,11 @@
         "GraphQLAPIEndpointOutput": "https://f3oi6l4ptfawfppkpqu33v2kqq.appsync-api.us-east-2.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-h6juz7ddtrchxbvkctkioe5rkm"
       },
+      "lastPushTimeStamp": "2022-07-21T18:55:03.540Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-todo-dev-112555-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apitodo"
       },
-      "lastPushTimeStamp": "2022-07-14T19:29:45.444Z",
       "lastPushDirHash": "0owJv081PdAHBLdo96laWeouWqs="
     }
   },
@@ -63,11 +63,6 @@
           "EMAIL"
         ]
       },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-todo-dev-112555-deployment/amplify-cfn-templates/auth/todoafe5980f-cloudformation-template.json",
-        "logicalId": "authtodoafe5980f"
-      },
-      "lastPushTimeStamp": "2022-07-14T19:29:45.574Z",
       "output": {
         "UserPoolId": "us-east-2_GihubeHT1",
         "AppClientIDWeb": "3bll49oofkirjm1kvnhk9p982n",
@@ -76,6 +71,11 @@
         "UserPoolArn": "arn:aws:cognito-idp:us-east-2:545909802236:userpool/us-east-2_GihubeHT1",
         "IdentityPoolName": "todoafe5980f_identitypool_afe5980f__dev",
         "UserPoolName": "todoafe5980f_userpool_afe5980f"
+      },
+      "lastPushTimeStamp": "2022-07-21T18:55:03.540Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-todo-dev-112555-deployment/amplify-cfn-templates/auth/todoafe5980f-cloudformation-template.json",
+        "logicalId": "authtodoafe5980f"
       },
       "lastPushDirHash": "fwA8t533EVOUSY8l8iMrLlWUmWA="
     }
